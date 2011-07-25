@@ -28,3 +28,9 @@ snippet block
 	{% block ${1:name} %}${2}{% endblock %}
 snippet f_date
 	{{ ${1:a_date}|date("${2:m/d/Y}") }}
+# Print block
+snippet }}
+	{{ ${1} }}
+# Single block
+snippet sb
+	{% block ${1:name} "${2}" %}
