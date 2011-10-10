@@ -17,9 +17,12 @@ snippet inc
 # extend
 snippet ext
 	{% extends "${1}" %}
+# Print variable
+snippet }}
+	{{ ${1} }}${2}
 # Single Regular execution block
 snippet %%
-	{% ${1} %}
+	{% ${1} %}${2}
 # Open/close block
 snippet %end
 	{% ${1:block} %}${2}{% end$1 %}
