@@ -1,11 +1,18 @@
 # Basic Twig snippets
 # Maintainer: F. Gabriel Gosselin <gabrielNOSPAM@evidens.ca>
 
+# extends
+snippet extends
+	{% extends '${1:template}' %}${2}
 # if
 snippet if
 	{% if ${1} %}
 		${2}
 	{% endif %}
+# else
+snippet else
+	{% else %}
+		${1}
 # for
 snippet for
 	{% for ${2:} in ${1} %}
@@ -17,12 +24,18 @@ snippet inc
 # extend
 snippet ext
 	{% extends "${1}" %}
+# Set
+snippet set
+	{% set ${1:var} = ${2:value} %}${3}
 # Print variable
 snippet }}
 	{{ ${1} }}${2}
 # Single Regular execution block
 snippet %%
 	{% ${1} %}${2}
+# Comment block
+snippet ##
+	{# ${1} #}${2}
 # Open/close block
 snippet %end
 	{% ${1:block} %}${2}{% end$1 %}
