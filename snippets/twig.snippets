@@ -9,6 +9,10 @@ snippet if
 	{% if ${1} %}
 		${2}
 	{% endif %}
+# else
+snippet else
+	{% else %}
+		${1}
 # for
 snippet for
 	{% for ${2:} in ${1} %}
