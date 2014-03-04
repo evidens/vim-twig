@@ -15,6 +15,25 @@
 "     2008 May 9:     Added support for Jinja2 changes (new keyword rules)
 "     2011 July 27:   Changed all references of jinja tp twig
 
+" For version 5.x: Clear all syntax items
+" For version 6.x: Quit when a syntax file was already loaded
+if version < 600
+  syntax clear
+elseif exists("b:current_syntax")
+  finish
+endif
+
+if !exists("main_syntax")
+  let main_syntax = 'html'
+endif
+
+if version < 600
+  so <sfile>:p:h/html.vim
+else
+  runtime! syntax/html.vim
+  unlet b:current_syntax
+endif
+
 syntax case match
 
 " Jinja template built-in tags and parameters (without filter, macro, is and raw, they
