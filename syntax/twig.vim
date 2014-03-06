@@ -5,7 +5,7 @@
 " Version:      1.0
 "
 " Based Jinja syntax by:	Armin Ronacher <armin.ronacher@active-4.com>
-" 
+"
 " Known Bugs:
 "   because of odd limitations dicts and the modulo operator
 "   appear wrong in the template.
@@ -19,7 +19,7 @@
 " For version 6.x: Quit when a syntax file was already loaded
 if version < 600
   syntax clear
-elseif exists("b:current_syntax")
+elseif exists("b:current_syntax") && b:current_syntax == 'twig'
   finish
 endif
 
