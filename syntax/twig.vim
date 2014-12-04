@@ -36,8 +36,8 @@ endif
 
 syntax case match
 
-" Jinja template built-in tags and parameters (without filter, macro, is and raw, they
-" have special threatment)
+" Twig template built-in tags and parameters (without filter, macro, is and
+" raw, they have special threatment)
 syn keyword twigStatement containedin=twigVarBlock,twigTagBlock,twigNested contained and if else in not or recursive as import
 
 syn keyword twigStatement containedin=twigVarBlock,twigTagBlock,twigNested contained is filter skipwhite nextgroup=twigFilter
@@ -54,7 +54,7 @@ syn match twigFilter contained skipwhite /[a-zA-Z_][a-zA-Z0-9_]*/
 syn match twigFunction contained skipwhite /[a-zA-Z_][a-zA-Z0-9_]*/
 syn match twigBlockName contained skipwhite /[a-zA-Z_][a-zA-Z0-9_]*/
 
-" Jinja template constants
+" Twig template constants
 syn region twigString containedin=twigVarBlock,twigTagBlock,twigNested contained start=/"/ skip=/\\"/ end=/"/
 syn region twigString containedin=twigVarBlock,twigTagBlock,twigNested contained start=/'/ skip=/\\'/ end=/'/
 syn match twigNumber containedin=twigVarBlock,twigTagBlock,twigNested contained /[0-9]\+\(\.[0-9]\+\)\?/
@@ -65,7 +65,7 @@ syn match twigPunctuation containedin=twigVarBlock,twigTagBlock,twigNested conta
 syn match twigOperator containedin=twigVarBlock,twigTagBlock,twigNested contained /\./ nextgroup=twigAttribute
 syn match twigAttribute contained /[a-zA-Z_][a-zA-Z0-9_]*/
 
-" Jinja template tag and variable blocks
+" Twig template tag and variable blocks
 syn region twigNested matchgroup=twigOperator start="(" end=")" transparent display containedin=twigVarBlock,twigTagBlock,twigNested contained
 syn region twigNested matchgroup=twigOperator start="\[" end="\]" transparent display containedin=twigVarBlock,twigTagBlock,twigNested contained
 syn region twigNested matchgroup=twigOperator start="{" end="}" transparent display containedin=twigVarBlock,twigTagBlock,twigNested contained
@@ -73,10 +73,10 @@ syn region twigTagBlock matchgroup=twigTagDelim start=/{%-\?/ end=/-\?%}/ skipwh
 
 syn region twigVarBlock matchgroup=twigVarDelim start=/{{-\?/ end=/-\?}}/ containedin=ALLBUT,twigTagBlock,twigVarBlock,twigRaw,twigString,twigNested,twigComment
 
-" Jinja template 'raw' tag
+" Twig template 'raw' tag
 syn region twigRaw matchgroup=twigRawDelim start="{%\s*raw\s*%}" end="{%\s*endraw\s*%}" containedin=ALLBUT,twigTagBlock,twigVarBlock,twigString,twigComment
 
-" Jinja comments
+" Twig comments
 syn region twigComment matchgroup=twigCommentDelim start="{#" end="#}" containedin=ALLBUT,twigTagBlock,twigVarBlock,twigString
 
 " Block start keywords.  A bit tricker.  We only highlight at the start of a
