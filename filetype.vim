@@ -19,11 +19,9 @@ function! s:Setf(filename)
 
   if !strlen(&ft)
     " Default to HTML twig template.
-    let b:main_syntax = 'html'
-    execute prefix 'setf html.twig'
-  elseif &ft !~ '\<twig\>'
-    let b:main_syntax = &syntax
-    let &ft .= '.twig'
+    let ft = 'html.twig'
+  else
+    let ft = &ft . (&ft =~ '\<twig\>' ? '' : '.twig')
   endif
-  endif
+  execute prefix 'set filetype=' . ft
 endfun
