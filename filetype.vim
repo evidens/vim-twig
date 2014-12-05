@@ -21,10 +21,9 @@ function! s:Setf(filename)
     " Default to HTML twig template.
     let b:main_syntax = 'html'
     execute prefix 'setf html.twig'
-  else
+  elseif &ft !~ '\<twig\>'
     let b:main_syntax = &syntax
-    if &ft !~ '\<twig\>'
-      let &ft .= '.twig'
-    endif
+    let &ft .= '.twig'
+  endif
   endif
 endfun

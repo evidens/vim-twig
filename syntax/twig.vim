@@ -1,10 +1,11 @@
 " Vim syntax file
-" Language:	    Twig template
-" Maintainer:   Gabriel Gosselin <gabrielNOSPAM@evidens.ca>
-" Last Change:	2011 July 27
-" Version:      1.0
+" Language:	Twig template
+" Maintainer:	Gabriel Gosselin <gabrielNOSPAM@evidens.ca>
+" Last Change:	2014 Decenmber 4
+" Version:	1.1
 "
 " Based Jinja syntax by:	Armin Ronacher <armin.ronacher@active-4.com>
+" With modifications by Benji Fisher, Ph.D.
 "
 " Known Bugs:
 "   because of odd limitations dicts and the modulo operator
@@ -14,24 +15,15 @@
 "
 "     2008 May 9:     Added support for Jinja2 changes (new keyword rules)
 "     2011 July 27:   Changed all references of jinja tp twig
+"     2014 Decenmber 4:   Do not assume that the base filetype is HTML.
 
-" For version 5.x: Clear all syntax items
-" For version 6.x: Quit when a syntax file was already loaded
-if version < 600
-  syntax clear
-elseif exists("b:current_syntax") && b:current_syntax == 'twig'
+if exists('b:main_syntax')
   finish
 endif
-
-if !exists("main_syntax")
-  let main_syntax = 'html'
-endif
-
-if version < 600
-  so <sfile>:p:h/html.vim
+if exists('b:current_syntax')
+  let b:main_syntax = b:current_syntax
 else
-  runtime! syntax/html.vim
-  unlet b:current_syntax
+  b:main_syntax = 'twig'
 endif
 
 syntax case match
@@ -123,6 +115,3 @@ if version >= 508 || !exists("did_twig_syn_inits")
 
   delcommand HiLink
 endif
-
-let b:current_syntax = "twig"
-
