@@ -13,9 +13,12 @@ function! s:Setf(filename)
   " later, so that we do not execute them twice.
   let ei_save = &eventignore
   set eventignore=FileType
-  let basefile = fnamemodify(a:filename, ':r')
-  execute prefix 'doau BufRead' basefile
-  let &eventignore = ei_save
+  try
+    let basefile = fnamemodify(a:filename, ':r')
+    execute prefix 'doau BufRead' basefile
+  finally
+    let &eventignore = ei_save
+  endtry
 
   if !strlen(&ft)
     " Default to HTML twig template.
