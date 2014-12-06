@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	Twig template
 " Maintainer:	Gabriel Gosselin <gabrielNOSPAM@evidens.ca>
-" Last Change:	2014 Decenmber 4
+" Last Change:	2014 December 4
 " Version:	1.1
 "
 " Based Jinja syntax by:	Armin Ronacher <armin.ronacher@active-4.com>
@@ -15,7 +15,7 @@
 "
 "     2008 May 9:     Added support for Jinja2 changes (new keyword rules)
 "     2011 July 27:   Changed all references of jinja tp twig
-"     2014 Decenmber 4:   Do not assume that the base filetype is HTML.
+"     2014 December 4:   Do not assume that the base filetype is HTML.
 
 if exists('b:main_syntax')
   finish
@@ -29,7 +29,7 @@ endif
 syntax case match
 
 " Twig template built-in tags and parameters (without filter, macro, is and
-" raw, they have special threatment)
+" raw, they have special treatment)
 syn keyword twigStatement containedin=twigVarBlock,twigTagBlock,twigNested contained and if else in not or recursive as import
 
 syn keyword twigStatement containedin=twigVarBlock,twigTagBlock,twigNested contained is filter skipwhite nextgroup=twigFilter
