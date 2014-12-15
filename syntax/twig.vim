@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	Twig template
 " Maintainer:	Gabriel Gosselin <gabrielNOSPAM@evidens.ca>
-" Last Change:	2014 December 4
+" Last Change:	2014 December 15
 " Version:	1.1
 "
 " Based Jinja syntax by:	Armin Ronacher <armin.ronacher@active-4.com>
@@ -23,7 +23,7 @@ endif
 if exists('b:current_syntax')
   let b:main_syntax = b:current_syntax
 else
-  b:main_syntax = 'twig'
+  let b:main_syntax = 'twig'
 endif
 
 syntax case match
