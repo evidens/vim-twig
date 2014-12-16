@@ -23,7 +23,7 @@ endif
 if exists('b:current_syntax')
   let b:main_syntax = b:current_syntax
 else
-  b:main_syntax = 'twig'
+  let b:main_syntax = 'twig'
 endif
 
 syntax case match
