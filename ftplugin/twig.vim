@@ -11,9 +11,9 @@ setlocal formatoptions+=tcqln
 " setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\|^[-*+]\\s\\+
 
 if exists("b:did_ftplugin")
-  let b:undo_ftplugin .= "|setl com< fo<"
+  let b:undo_ftplugin .= "|setlocal comments< formatoptions<"
 else
-  let b:undo_ftplugin = "setl com< fo<"
+  let b:undo_ftplugin = "setlocal comments< formatoptions<"
 endif
 
 " vim:set sw=2:
