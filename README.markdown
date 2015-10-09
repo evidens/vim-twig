@@ -1,3 +1,10 @@
+**DISCONTINUED**
+
+I haven't used Vim or Twig in a long time and so haven't made time to keep this up-to-date.
+
+If you would like to maintain this repo, I'll happily re-direct people to your fork.
+
+
 # vim-twig
 
 ## About
